@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html>
   <head>
     <title>RentAGranny</title>
@@ -12,6 +13,11 @@
   </head>
 
   <body>
+    <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
+
