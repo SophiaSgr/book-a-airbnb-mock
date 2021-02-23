@@ -5,10 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+GrandmotherOffer.destroy_all
+User.destroy_all
 
-GrandmotherOffer.new(first_name: 'Queen', last_name: 'Elizabeth', username: 'realQueenElizabeth', activity_price: 'one big smile', activity_type: 'playing cricket', description: 'Hi, I am the Queen, but you cann call me Elizabeth. I am very into buisquits and love hanging out with my family. If you like playing cricket, you are more then welcome to join me and a cup of tea. Sincerly - Elizabeth')
+user = User.create!(email:"m@gmail.de", first_name:"bob", last_name:"ross", username:"bobr", password: "123456")
 
-GrandmotherOffer.new(first_name: 'Leslie', last_name: 'Bauwers', username: 'leeeeeslie', activity_price: 'cake', activity_type: 'reading stories', description: 'Hello, my name is Leslie, I am 78 years old. I like to tell people some old storys, so they wont be forgotten in the future. If you like to listen and have some cake, feel free to join me.' )
+GrandmotherOffer.create!(user_id: user.id, first_name: 'Queen', last_name: 'Elizabeth', username: 'realQueenElizabeth', activity_price: 'one big smile', activity_type: 'playing cricket', description: 'Hi, I am the Queen, but you cann call me Elizabeth. I am very into buisquits and love hanging out with my family. If you like playing cricket, you are more then welcome to join me and a cup of tea. Sincerly - Elizabeth')
+
+GrandmotherOffer.create!(user_id: user.id, first_name: 'Leslie', last_name: 'Bauwers', username: 'leeeeeslie', activity_price: 'cake', activity_type: 'reading stories', description: 'Hello, my name is Leslie, I am 78 years old. I like to tell people some old storys, so they wont be forgotten in the future. If you like to listen and have some cake, feel free to join me.')
+
+
+p "CREATED #{GrandmotherOffer.count}"
 
 # GrandmotherOsffer.new(first_name: 'Queen', last_name: 'Elizabeth', username: 'realQueenElizabeth', activity_price: 'one big smile', activity_type: 'playing cricket', description: 'Hi, I am the Queen, but you cann call me Elizabeth. I am very into buisquits and love hanging out with my family. If you like playing cricket, you are more then welcome to join me and a cup of tea. Sincerly - Elizabeth')git add .
 

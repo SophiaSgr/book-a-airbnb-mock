@@ -1,4 +1,5 @@
 class GrandmotherOffersController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     @grandmother_offers = GrandmotherOffer.all
   end
@@ -13,6 +14,7 @@ class GrandmotherOffersController < ApplicationController
 
   def create
     @grandmother_offer = GrandmotherOffer.new(grandmother_offer_params)
+    @grandmother_offer.user_id = current_user.id
     if @grandmother_offer.save
       redirect_to grandmother_offer_path(@grandmother_offer)
     else
@@ -32,11 +34,11 @@ class GrandmotherOffersController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @grandmother_offer = GrandmotherOffer.find(params[:id])
     @grandmother_offer.destroy
-    redirect_to grandmother_offers_path, notice: 'Offer was successfully destroyed.' 
+    redirect_to grandmother_offers_path, notice: 'Offer was successfully destroyed.'
   end
 
   private
