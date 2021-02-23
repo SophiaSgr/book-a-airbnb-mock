@@ -1,5 +1,6 @@
 class GrandmotherOffer < ApplicationRecord
   has_many :bookings
+  belongs_to :user
   has_many :users, through: :bookings
   validates :first_name, presence: true
   validates :last_name, presence: true
