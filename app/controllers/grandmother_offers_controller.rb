@@ -30,6 +30,7 @@ class GrandmotherOffersController < ApplicationController
       redirect_to grandmother_offer_path(@grandmother_offer), notice: 'Offer was successfully updated.'
     else
       render :edit
+    end
   end
   
   def destroy
