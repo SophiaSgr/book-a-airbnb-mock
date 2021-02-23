@@ -1,0 +1,14 @@
+<h2>
+  <ul>
+    <li>
+      <%= @grandmother_offer.first_name %> 
+      <%= @grandmother_offer.last_name %> <br>
+      <%= @grandmother_offer.username %> <br>
+      <%= @grandmother_offer.activity_price %> <br>
+      <%= @grandmother_offer.activity_type %> <br>
+      <%= @grandmother_offer.description %> <br>
+    </li>
+  </ul>
+</h2>
+
+<p>Go back to <%= link_to 'all grannys', grandmother_offers_path %></p>

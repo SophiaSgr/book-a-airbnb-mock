@@ -1,1 +1,9 @@
-<h1>list of grandmother offers</h1>
+<h2>
+    <ul><% @grandmother_offers.each do |offer| %>
+        <li><%= link_to offer.username, grandmother_offer_path(offer) %></li>  
+        <% end %>
+    </ul>  
+</h2>
+
+
+<p> <%= link_to 'create grandmother offer', new_grandmother_offer_path %></p>

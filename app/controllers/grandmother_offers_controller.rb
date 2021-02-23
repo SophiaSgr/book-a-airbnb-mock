@@ -4,7 +4,7 @@ class GrandmotherOffersController < ApplicationController
   end
 
   def show
-    @grandmother_offers = GrandmotherOffer.find(params[:id])
+    @grandmother_offer = GrandmotherOffer.find(params[:id])
   end
 
   def new
