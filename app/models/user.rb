@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :bookings
+  has_many :grandmother_offers, through: :bookings
   validates :username, :email, presence: true, uniqueness: true
   validates :first_name, :last_name, presence: true
   # Include default devise modules. Others available are:
