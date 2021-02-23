@@ -1,4 +1,5 @@
 class GrandmotherOffersController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     @grandmother_offers = GrandmotherOffer.all
   end
