@@ -1,11 +1,11 @@
 class BookingsController < ApplicationController
 
   def index
-    Bookings.all
+    @bookings = Booking.all
   end
 
   def show
-
+    @booking = Booking.find(params[:id]
   end
 
   def new
@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.grandmother_offers = @grandmother_offer
     if @booking.save
-      redirect_to  # ROUTE
+      redirect_to  grandmother_offer_booking_path(@grandmother_offer)# ROUTE
     else
       render :new # NOT A ROUTE, IT'S A FILEPATH FROM /views
     end
