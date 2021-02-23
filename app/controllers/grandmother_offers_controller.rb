@@ -26,14 +26,16 @@ class GrandmotherOffersController < ApplicationController
 
   def update
     @grandmother_offer = GrandmotherOffer.find(params[:id])
-    @grandmother_offer.update(params[grandmother_offer_params])
-    redirect_to grandmother_offer_path(@grandmother_offer)
+    if @grandmother_offer.update(params[grandmother_offer_params])
+      redirect_to grandmother_offer_path(@grandmother_offer), notice: 'Offer was successfully updated.'
+    else
+      render :edit
   end
-    
+  
   def destroy
     @grandmother_offer = GrandmotherOffer.find(params[:id])
     @grandmother_offer.destroy
-    redirect_to grandmother_offers_path
+    redirect_to grandmother_offers_path, notice: 'Offer was successfully destroyed.' 
   end
 
   private
