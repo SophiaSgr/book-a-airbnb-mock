@@ -2,9 +2,21 @@
   <div class="container text-center">
     <div class="col-md-12">
       <h1>Need a granny?</h1>
-      <p class="tagline">Start looking for your granny,<br> and rent her now!</p>
-      <h2>We have grannys at service</h2>
-      <a class="btn btn-full scrollto" href="#about">Get Started Now</a>
+      <p class="tagline">Start looking for your granny,<br> and book her now!</p>
+      <h2>We have <%= GrandmotherOffer.count %> grannys at our service.</h2>
+      <form class="form">
+        <div class="inputWrapper">
+          <label for="granny-location">Choose your location:</label>
+          <input type="location" id="granny-location" name="granny-location" class="ginput">
+        </div>
+        <div class="inputWrapper">
+          <label for="granny-date">Choose your date:</label>
+          <input type="date" id="granny-date" name="granny-date" class="ginput">
+        </div>
+        <div class="inputWrapper">
+          <input type="submit" class="gbutton" value="Show available offers">
+        </div>
+      </form>
     </div>
   </div>
 </section>
