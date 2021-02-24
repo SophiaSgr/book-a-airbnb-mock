@@ -1,19 +1,29 @@
-<h2>
-  <ul>
-    <li>
-      <%= @grandmother_offer.first_name %>
-      <%= @grandmother_offer.last_name %> <br>
-      <%= @grandmother_offer.username %> <br>
-      <%= @grandmother_offer.activity_price %> <br>
-      <%= @grandmother_offer.activity_type %> <br>
 
-    </li>
-  </ul>
-</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+
+      <h1> <%= @grandmother_offer.activity_type %> with <%= @grandmother_offer.first_name %> <%= @grandmother_offer.last_name %></h1>
+
+      <br>
+      <br>
+
+      <p> <%= @grandmother_offer.description %> </p>
+
+      <h5>Activity price:</h5> <%= @grandmother_offer.activity_price %> <br>
 
 
- <%= link_to 'SEE ALL GRANNYS', grandmother_offers_path %>
 
- <br>
 
- <%= link_to 'BOOK THIS DARLING GRANNY', new_grandmother_offer_booking_path(@grandmother_offer) %>
+
+       <br>
+
+       <%= link_to 'BOOK THIS DARLING GRANNY', new_grandmother_offer_booking_path(@grandmother_offer) %>
+       <br>
+       <br>
+
+        <%= link_to 'SEE ALL GRANNYS', grandmother_offers_path %>
+    </div>
+  </div>
+</div>
+
