@@ -1,13 +1,20 @@
-<h2>
-    <ul><% @grandmother_offers.each do |offer| %>
-        <li><%= link_to offer.username, grandmother_offer_path(offer) %>
-        
-        <%= image_tag(offer.photo, height: '400') %>
-        
-        </li>  
+<div class="container">
+
+
+    <% @grandmother_offers.each do |offer| %>
+      <%= link_to grandmother_offer_path(offer), class: 'card-product-link' do %>
+        <div class="card-product my-3" >
+          
+          <%= image_tag(offer.photo, height: '400') %>
+          <div class="card-product-infos">
+          <h2><%= offer.username %></h2>
+         
+          </div>
+          </div>
         <% end %>
-    </ul>  
-</h2>
+        <% end %>
+      
+</div>
 
+<div class='gbutton'><%= link_to 'create grandmother offer', new_grandmother_offer_path %></div>
 
-<p> <%= link_to 'create grandmother offer', new_grandmother_offer_path %></p>
