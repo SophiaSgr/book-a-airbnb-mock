@@ -8,15 +8,46 @@
   color:white;
   background-size:cover;
   height:600px;
-   text-shadow: 0px 0px 4px #000000;
+  text-shadow: 0px 0px 4px #000000;
   align-items:center;
   background-position: center center;
-
+  font-family:Avenir Next Condensed;
+  font-weight: lighter;
+  font-size:20px;
   h1{
   font-family: Edwardian Script ITC;
-  font-size: 80px;
+  font-size: 100px;
   padding-top:70px;
   padding-bottom:30px;
   }
+  h2{
+    font-family:Avenir Next Condensed;
+    font-size: 50px;
+  }
 }
-
+.gbutton{
+  margin-top:5px;
+  margin: 10px;
+}
+.ginput{
+  margin:10px;
+}
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content:center;
+  margin-top: 30px;
+}
+@media (max-width: 700px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  .hero{
+     height:900px;
+  }
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
