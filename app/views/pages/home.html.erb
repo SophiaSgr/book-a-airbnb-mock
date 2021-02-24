@@ -4,23 +4,25 @@
       <h1>Need a granny?</h1>
       <p class="tagline">Start looking for your granny,<br> and book her now!</p>
       <h2>We have <%= GrandmotherOffer.count %> grannys at our service.</h2>
-      <form class="form">
+      <form class="form-inline">
         <div class="inputWrapper">
           <label for="granny-location">Choose your location:</label>
           <input type="location" id="granny-location" name="granny-location" class="ginput">
         </div>
         <div class="inputWrapper">
           <label for="granny-date">Choose your date:</label>
-          <input type="date" id="granny-date" name="granny-date" class="ginput">
+          <input type="date" id="granny-date" name="granny-date" class="ginpu">
         </div>
         <div class="inputWrapper">
-          <input type="submit" class="gbutton" value="Show available offers">
+          <input type="submit" class="gbutton" href="/users/sign_in" value="Show available offers" style="margin-top: 30px;">
         </div>
       </form>
     </div>
   </div>
 </section>
-
 <section id="cards" class="cards">
-
+  <div class="card">
+  </div>
+  <div class="card">
+  </div>
 </section>
