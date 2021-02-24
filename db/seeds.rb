@@ -25,7 +25,7 @@ puts 'finished'
 
 puts 'creating grandmas'
 
-GrandmotherOffer.create(photo: 'https://img.derwesten.de/img/promi-tv/crop229232648/1894224781-w1200-cv3_2-q85/QueenElizabeth.jpg', user_id: queen.id, first_name: 'Queen', last_name: 'Elizabeth', username: 'realQueenElizabeth', activity_price: 'one big smile', activity_type: 'playing cricket', description: 'Hi, I am the Queen, but you cann call me Elizabeth. I am very into buisquits and love hanging out with my family. If you like playing cricket, you are more then welcome to join me and a cup of tea. Sincerly - Elizabeth')
+GrandmotherOffer.create(photo: 'https://img.derwesten.de/img/promi-tv/crop229232648/1894224781-w1200-cv3_2-q85/QueenElizabeth.jpg', user_id: queen.id, first_name: 'Queen', last_name: 'Elizabeth', username: 'realQueenElizabeth', activity_price: 'one big smile', activity_type: 'Playing cricket', description: 'Hi, I am the Queen, but you cann call me Elizabeth. I am very into buisquits and love hanging out with my family. If you like playing cricket, you are more then welcome to join me and a cup of tea. Sincerly - Elizabeth')
 
 
 GrandmotherOffer.create(photo: 'https://images.unsplash.com/photo-1551861568-332d2a6e2330?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80', user_id: leslie.id, first_name: 'Leslie', last_name: 'Bauwers', username: 'leeeeeslie', activity_price: 'cake', activity_type: 'reading stories', description: 'Hello, my name is Leslie, I am 78 years old. I like to tell people some old storys, so they wont be forgotten in the future. If you like to listen and have some cake, feel free to join me.')
