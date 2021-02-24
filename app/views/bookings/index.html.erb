@@ -1,9 +1,13 @@
 <h1>HELLO HERE ARE YOUR BOOKINGS</h1>
 
 <% @bookings.each do |b| %>
+<br>
 <%= b.booking_date %>
+<br>
 <%= b.status %>
 
 <% end %>
 
-<%= link_to "I want to book", new_grandmother_offer_booking_path  %>
+<br>
+
+<%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path  %>

@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.grandmother_offer = @grandmother_offer
     if @booking.save
-      redirect_to grandmother_offer_path(@grandmother_offer)
+      redirect_to grandmother_offer_bookings_path(@grandmother_offer)
     else
       render :new
     end
