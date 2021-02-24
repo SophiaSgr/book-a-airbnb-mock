@@ -46,6 +46,7 @@
 
 
 .card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   padding: 10px;
 }

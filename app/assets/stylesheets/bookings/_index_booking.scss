@@ -7,6 +7,7 @@
 .container{
   h1{
     text-align: center;
+    margin-top: 25px;
   }
 }
 
@@ -15,4 +16,13 @@
     text-align: center;
   }
 
+}
+
+.card-date-position{
+  margin: auto 0;
+}
+
+.card-position-status{
+  margin: auto 0;
+  text-align: right;
 }
