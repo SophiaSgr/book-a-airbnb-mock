@@ -4,24 +4,24 @@
   <br>
   <div class="card">
     <div class="card-date-position">
-      <p>Date of your booking</p>
-      <%= b.booking_date %>
+      <h6>Date of your booking</h6>
+      <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
     </div>
     <div>
-     <p>Description</p>
-     <%= b.grandmother_offer.description %>
+     <h6>Description</h6>
+     <p><%= b.grandmother_offer.description %></p>
    </div>
 
-    <div class="card-position-status">
-      <p>Status</p>
-      <%= b.status %>
-    </div>
+   <div class="card-position-status">
+    <h6>Status</h6>
+    <p><%= b.status %></p>
   </div>
+</div>
 <% end %>
 
 <br>
 <div class="link-position">
-  <%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path  %>
+  <%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path, class: "gbutton"  %>
 </div>
 </div>
 
