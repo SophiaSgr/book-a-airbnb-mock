@@ -2,8 +2,14 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :grandmother_offer
 
+  OFFERS = ['Grocery shoppping',
+    'Bake a cake',
+    'Help with whatsapp setup',
+    'Help with garden',
+    'Help with internet']
 
   validates :booking_date, presence: true
+  validates :exchange_offer, inclusion: { in: OFFERS }
 
   # validates :booking_date_cannot_be_in_the_past
 
