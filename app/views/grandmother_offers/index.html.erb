@@ -17,8 +17,7 @@
     <% end %>
 
   </div>
-    <button class="gbutton" style="text-decoration: none; color: white;"><%= link_to 'create grandmother offer', new_grandmother_offer_path %></button>
-
+    <div class="button" style="margin-bottom:20px;"><%= link_to 'create grandmother offer', new_grandmother_offer_path, class: "gbutton"%></div>
   <div id="map"
     style="width: 100%; height: 600px;"
     data-markers="<%= @markers.to_json %>"
