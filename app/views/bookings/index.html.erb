@@ -1,37 +1,66 @@
+
+
+
 <div class="container">
-  <h1>MY BOOKINGS</h1>
-  <% @bookings.each do |b| %>
-  <br>
-  <div class="card">
-    <div class="card-date-position">
-      <h6>Date of your booking</h6>
-      <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
+
+  <section class="tabs">
+
+    <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+    <label for="tab-1" class="tab-label-1">MY BOOKINGS</label>
+
+    <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+    <label for="tab-2" class="tab-label-2">BOOKING REQUESTS</label>
+
+    <!--<div class="clear-shadow"></div>-->
+
+    <div class="content">
+      <div class="content-1 p-3">
+        <% @my_bookings.each do |b| %>
+        <h2>MY BOOKINGS</h2>
+        <h6 class="mt-4">Date of your booking</h6>
+        <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
+        <h6 class="mt-4">Description</h6>
+        <p><%= b.grandmother_offer.description %></p>
+        <h6 class="mt-4">Status</h6>
+        <% if b.accepted == true %>
+        <p>Accepted</p>
+        <% elsif b.accepted == false %>
+        <p>Declined</p>
+        <% else %>
+        <p>Pending</p>
+        <% end %>
+      </div>
+
+      <div class="content-2 p-3">
+        <h2>BOOKING REQUESTS</h2>
+        <h6 class="mt-4">Date of booking request</h6>
+        <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
+        <h6 class="mt-4">Description</h6>
+        <p><%= b.grandmother_offer.description %></p>
+        <h6>Status</h6>
+        <% if b.accepted == true %>
+        <p>Accepted</p>
+        <% elsif b.accepted == false %>
+        <p>Declined</p>
+        <% else %>
+        <p>Pending</p>
+        <% end %>
+        <% if current_user == b.grandmother_offer.user  %>
+        <p><%= link_to "Accept", accept_booking_path(b), method: :patch %></p>
+        <p><%= link_to "Decline", reject_booking_path(b), method: :patch %></p>
+        <% end %>
+
+      </div>
     </div>
-    <div>
-     <h6>Description</h6>
-     <p><%= b.grandmother_offer.description %></p>
-   </div>
-
-   <div class="card-position-status">
-    <h6>Status</h6>
-    <% if b.accepted == true %>
-    <p>Accepted</p>
-    <% elsif b.accepted == false %>
-    <p>Declined</p>
-    <% else %>
-    <p>Pending</p>
     <% end %>
-    <% if current_user == b.grandmother_offer.user  %>
-    <p><%= link_to "Accept", accept_booking_path(b), method: :patch %></p>
-     <p><%= link_to "Decline", reject_booking_path(b), method: :patch %></p>
-     <% end %>
+  </section>
+  <div class="link-position">
+    <%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path, class: "gbutton"  %>
   </div>
-</div>
-<% end %>
 
-<br>
-<div class="link-position">
-  <%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path, class: "gbutton"  %>
 </div>
-</div>
+
+
+
+
 
