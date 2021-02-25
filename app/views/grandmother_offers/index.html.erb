@@ -2,7 +2,9 @@
     <% @grandmother_offers.each do |offer| %>
       <%= link_to grandmother_offer_path(offer), class: 'card-product-link' do %>
         <div class="card-product my-3" >
-          <%= image_tag(offer.photo, height: '400') %>
+          <% if offer.photos.attached? %>
+            <%= cl_image_tag offer.photos.first.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
           <div class="card-product-infos">
           <h2><%= offer.username %></h2>
           </div>
