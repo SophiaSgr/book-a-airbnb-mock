@@ -4,8 +4,11 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :activity_type %>
-  <%= f.input :activity_price %>
   <%= f.input :description %>
+
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit 'Submit', class:'btn btn-primary'%>
 
 <% end %>
+
+
