@@ -3,6 +3,7 @@
 
 <%= simple_form_for [@grandmother_offer, @booking] do |f| %>
 <%= f.input :booking_date, label: "Please enter your booking date:" %>
+ <%= f.input :exchange_offer, collection: Booking::OFFERS %>
 
 <%= f.button :submit %>
 <% end %>

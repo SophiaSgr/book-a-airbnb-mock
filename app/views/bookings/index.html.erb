@@ -31,8 +31,12 @@
         <% end %>
       </div>
 
-      <div class="content-2">
+      <div class="content-2 p-3">
         <h2>BOOKING REQUESTS</h2>
+        <h6 class="mt-4">Date of booking request</h6>
+        <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
+        <h6 class="mt-4">Description</h6>
+        <p><%= b.grandmother_offer.description %></p>
         <h6>Status</h6>
         <% if b.accepted == true %>
         <p>Accepted</p>
