@@ -5,16 +5,14 @@
 
       <div class='d-flex shadow p-3 mb-5 bg-white rounded mr-3 py-3' >
 
-        <% if @grandmother_offer.photos.attached? %>
-           <% @grandmother_offer.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-        <% end %>
+         <%= image_tag(@grandmother_offer.photo, height: '400') %>
+
         <div class='py-3 ml-5'>
           <h1> <%= @grandmother_offer.activity_type %> with <%= @grandmother_offer.first_name %> <%= @grandmother_offer.last_name %></h1>
 
 
           <p> <%= @grandmother_offer.description %> </p>
+          <h5>Activity price: <%= @grandmother_offer.activity_price %>  </h5>
 
         </div>
 
@@ -27,6 +25,4 @@
     <%= render "bookings/new_booking_form" %>
   </div>
 </div>
-
-
 
