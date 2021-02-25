@@ -1,10 +1,12 @@
-
+.hero-picture{
+  background-image:url(https://media.npr.org/assets/img/2019/02/06/grandmother-1_wide-b4e1ac71c276b447a873921dea8f9b6175d84a91.jpeg?s=1400);
+}
 .card-product-link {
     text-decoration: none;
     color: black;
     &:hover {
         text-decoration: none;
-        color: black; 
+        color: black;
     }
 }
 
@@ -15,21 +17,20 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
-    
   }
-  
+
   .card-product img {
     height: 100%;
     width: 120px;
     object-fit: cover;
   }
-  
+
   .card-product h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
   }
-  
+
   .card-product p {
     font-size: 12px;
     line-height: 1.4;
@@ -37,8 +38,7 @@
     margin-bottom: 0;
     margin-top: 8px;
   }
-  
+
   .card-product .card-product-infos {
     padding: 16px;
   }
-

@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "https://image.freepik.com/free-vector/grandma-mascot-logo-template_7450-521.jpg" %>
     <% end %>
 <p></p>
@@ -14,11 +14,15 @@
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
+        <li class="nav-item active">
+          <%= link_to "Bookings", bookings_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Offers", grandmother_offers_path, class: "nav-link" %>
+        </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://images.unsplash.com/photo-1559484101-9c6be5b712cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTgwOTN8MHwxfHNlYXJjaHwxMHx8Y293fGVufDB8fHw&ixlib=rb-1.2.1&q=80&w=1080", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
