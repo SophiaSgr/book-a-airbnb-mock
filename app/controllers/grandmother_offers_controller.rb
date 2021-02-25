@@ -6,6 +6,7 @@ class GrandmotherOffersController < ApplicationController
 
   def show
     @grandmother_offer = GrandmotherOffer.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -44,6 +45,6 @@ class GrandmotherOffersController < ApplicationController
   private
 
   def grandmother_offer_params
-    params.require(:grandmother_offer).permit(:first_name, :last_name, :username, :activity_price, :activity_type, :description)
+    params.require(:grandmother_offer).permit(:first_name, :last_name, :username, :activity_type, :description, :city, :specialty, :character, :return_offer_wish, photos: [])
   end
 end

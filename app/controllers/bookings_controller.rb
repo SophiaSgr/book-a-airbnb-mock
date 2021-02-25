@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.order(created_at: :desc)
   end
 
   def new
@@ -15,15 +15,25 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.grandmother_offer = @grandmother_offer
     if @booking.save
-      redirect_to grandmother_offer_bookings_path(@grandmother_offer)
+      redirect_to bookings_path(@grandmother_offer)
     else
       render :new
     end
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.update(accepted: true)
+    redirect_to bookings_path
+  end
+
+  def reject
+
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:booking_date, :status)
+    params.require(:booking).permit(:booking_date)
   end
 end
