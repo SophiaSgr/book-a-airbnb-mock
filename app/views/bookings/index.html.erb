@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>YOUR CURRENT BOOKINGS</h1>
+  <h1>MY BOOKINGS</h1>
   <% @bookings.each do |b| %>
   <br>
   <div class="card">
@@ -14,7 +14,17 @@
 
    <div class="card-position-status">
     <h6>Status</h6>
-    <p><%= b.status %></p>
+    <% if b.accepted == true %>
+    <p>Accepted</p>
+    <% elsif b.accepted == false %>
+    <p>Declined</p>
+    <% else %>
+    <p>Pending</p>
+    <% end %>
+    <% if current_user == b.grandmother_offer.user  %>
+    <p><%= link_to "Accept", accept_booking_path(b), method: :patch %></p>
+     <p><%= link_to "Decline", reject_booking_path(b), method: :patch %></p>
+     <% end %>
   </div>
 </div>
 <% end %>

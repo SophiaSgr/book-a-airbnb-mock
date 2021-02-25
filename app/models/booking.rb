@@ -2,9 +2,9 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :grandmother_offer
 
-  STATUSES = ['accepted', 'rejected', 'pending']
+
   validates :booking_date, presence: true
-  validates :status, presence: true, inclusion: { in: STATUSES }
+
   # validates :booking_date_cannot_be_in_the_past
 
   private

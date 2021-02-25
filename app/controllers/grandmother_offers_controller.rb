@@ -6,6 +6,7 @@ class GrandmotherOffersController < ApplicationController
 
   def show
     @grandmother_offer = GrandmotherOffer.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

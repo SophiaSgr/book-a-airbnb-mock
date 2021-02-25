@@ -14,9 +14,6 @@
           <p> <%= @grandmother_offer.description %> </p>
           <h5>Activity price: <%= @grandmother_offer.activity_price %>  </h5>
 
-           <%= link_to 'BOOK THIS GRANNY', new_grandmother_offer_booking_path(@grandmother_offer), class: 'gbutton' %>
-
-
         </div>
 
 
@@ -25,6 +22,7 @@
 
         <%= link_to 'SEE ALL GRANNYS', grandmother_offers_path, class: 'gbutton' %>
     </div>
+    <%= render "bookings/new_booking_form" %>
   </div>
 </div>
 
