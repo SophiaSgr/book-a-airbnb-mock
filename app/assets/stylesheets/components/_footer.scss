@@ -1,9 +1,23 @@
-.footer-basic {
-  margin-top: 50px;
-  padding:40px 0;
+footer{
+  bottom:0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color:#ffffff;
   color:#4b4c4d;
-
+  padding:40px 0;
+  position: static;
+}
+.footer-basic {
+  background-color:#ffffff;
+  color:#4b4c4d;
+  bottom:0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#ffffff;
+  color:#4b4c4d;
+  padding:40px 0;
 }
 
 .footer-basic ul {
