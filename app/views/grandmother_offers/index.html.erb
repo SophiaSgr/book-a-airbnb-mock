@@ -15,6 +15,7 @@
         </div>
       <% end %>
     <% end %>
+
   </div>
     <div class="button" style="margin-bottom:20px;"><%= link_to 'create grandmother offer', new_grandmother_offer_path, class: "gbutton"%></div>
   <div id="map"
@@ -22,4 +23,5 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+
 </div>
