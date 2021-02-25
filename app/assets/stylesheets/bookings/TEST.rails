@@ -1,0 +1,88 @@
+<div class="container">
+  <div>
+    <h1>MY BOOKINGS</h1>
+    <% @my_bookings.each do |b| %>
+      <div class="card">
+        <div class="card-date-position">
+          <h6>Date of your booking</h6>
+          <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
+        </div>
+        <div>
+         <h6>Description</h6>
+         <p><%= b.grandmother_offer.description %></p>
+       </div>
+
+       <div class="card-position-status">
+        <h6>Status</h6>
+        <% if b.accepted == true %>
+          <p>Accepted</p>
+        <% elsif b.accepted == false %>
+          <p>Declined</p>
+        <% else %>
+          <p>Pending</p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <div>
+    <h1>Booking Requests</h1>
+    <% @requests.each do |request| %>
+      <div class="card">
+        <div class="card-date-position">
+          <h6>Date of your booking</h6>
+          <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
+        </div>
+        <div>
+         <h6>Description</h6>
+         <p><%= b.grandmother_offer.description %></p>
+        </div>
+
+       <div class="card-position-status">
+        <h6>Status</h6>
+        <% if b.accepted == true %>
+         <p>Accepted</p>
+        <% elsif b.accepted == false %>
+          <p>Declined</p>
+        <% else %>
+          <p>Pending</p>
+        <% end %>
+        <% if current_user == b.grandmother_offer.user  %>
+          <p><%= link_to "Accept", accept_booking_path(b), method: :patch %></p>
+          <p><%= link_to "Decline", reject_booking_path(b), method: :patch %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+
+<section class="tabs">
+
+    <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+    <label for="tab-1" class="tab-label-1">MY BOOKINGS</label>
+
+    <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+    <label for="tab-2" class="tab-label-2">BOOKING REQUESTS</label>
+
+    <!--<div class="clear-shadow"></div>-->
+
+    <div class="content">
+      <div class="content-1">
+        <h2>Tab 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia leo sit amet diam varius, ac maximus turpis volutpat. Cras interdum nulla orci, eget convallis tellus mollis ac. Quisque nunc mi, vulputate eget mi id, fringilla rhoncus dui. Morbi rhoncus accumsan rhoncus. Pellentesque ac tellus orci. Mauris facilisis sem eu auctor congue. Praesent at nunc leo. Cras ultricies, orci a placerat auctor, felis erat egestas enim, non porttitor lacus metus at nibh. In sit amet lectus fermentum, gravida turpis nec, dapibus arcu. Cras at nisi faucibus, condimentum odio id, mattis justo. Duis malesuada diam rutrum risus dignissim interdum.</p>
+      </div>
+      <div class="content-2">
+        <h2>Tab 2</h2>
+        <p>Aenean tristique hendrerit sapien in porta. Aliquam feugiat luctus blandit. Cras nunc ex, egestas in consequat ac, egestas vitae lectus. Nunc convallis purus sed ex pretium, sit amet dapibus lorem efficitur. Nulla facilisi. Vivamus ut metus purus. Nam tincidunt faucibus dolor, eget aliquet justo. Nullam turpis ipsum, gravida non lacinia ac, condimentum in sapien. Praesent vulputate dolor ac interdum semper. Nullam sed odio semper, tempor libero ut, pharetra enim. Donec at mattis dolor, eget varius turpis. Aliquam erat volutpat. Nulla bibendum rhoncus felis sed accumsan.     </p>
+  <p>
+  Suspendisse vulputate, leo sed cursus feugiat, ipsum odio accumsan diam, iaculis volutpat enim ligula et lacus. Donec hendrerit pellentesque lectus, tempus gravida orci vulputate ut. Vivamus sed vehicula libero, id imperdiet tellus. Etiam lacinia felis vitae vulputate condimentum. Duis vitae pulvinar elit, ac iaculis mauris. Pellentesque tincidunt interdum elementum. Nunc dictum volutpat mauris, in interdum sem tincidunt eget. Morbi vitae ipsum scelerisque, condimentum magna gravida, eleifend risus. Phasellus ac placerat eros, ac auctor sem. Etiam id orci tempor, suscipit felis vel, ultrices ex. Quisque tempus fringilla libero id aliquam. Quisque et sapien enim. Vestibulum laoreet lacus sit amet efficitur commodo. Mauris lacinia magna at sapien lacinia fringilla ac viverra nibh. Suspendisse tristique consectetur arcu sed pulvinar.</p>
+      </div>
+    </div>
+</section>
+  <div class="link-position">
+    <%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path, class: "gbutton"  %>
+  </div>
+
+</div>

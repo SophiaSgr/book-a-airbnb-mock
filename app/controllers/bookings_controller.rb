@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all.order(created_at: :desc)
+    @my_bookings = Booking.all.select { |booking| booking.user_id == current_user.id }
+    @requests = Booking.all.select { |booking| booking.grandmother_offer.user == current_user }
   end
 
   def new
@@ -28,7 +29,9 @@ class BookingsController < ApplicationController
   end
 
   def reject
-
+    @booking = Booking.find(params[:id])
+    @booking.update(accepted: false)
+    redirect_to bookings_path
   end
 
   private
