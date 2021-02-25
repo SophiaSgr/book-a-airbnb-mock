@@ -3,21 +3,14 @@
     <div class="col-md-12">
       <h1>Need a granny?</h1>
       <p class="tagline">Start looking for your granny,<br> and book her now!</p>
-      <h2>We have <%= GrandmotherOffer.count %> grannys at our service.</h2>
-     <!--  <form class="form-inline">
-        <div class="inputWrapper">
-          <label for="granny-location">Choose your location:</label>
-          <input type="location" id="granny-location" name="granny-location" class="ginput">
+      <h2>We have <%= GrandmotherOffer.count %> grannys.</h2>
+      <section class="search-row">
+        <input class="search-input" type="text" placeholder="Select your location"></input>
+        <div class="checks-input" style="background-color: white;">
+          <input class="check-in" type="date" placeholder="Date:"></input>
         </div>
-        <div class="inputWrapper">
-          <label for="granny-date">Choose your date:</label>
-          <input type="date" id="granny-date" name="granny-date" class="ginput">
-        </div>
-        <div class="inputWrapper"> -->
-          <!-- input type="submit" class="gbutton" href="/grandmother_offers" value="Show available offers" style="margin-top: 30px;"> -->
-            <%= link_to "SHOW AVAILABLE OFFERS", grandmother_offers_path, class: "gbutton" %>
-        </div>
-      </form>
+        <div class="button1"><button class="gbutton" href="/grandmother_offers"> See available offers </button></div>
+      </section>
     </div>
   </div>
 </section>
