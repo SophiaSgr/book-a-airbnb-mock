@@ -4,7 +4,7 @@
 }
 .hero{
   margin-top: -10px;
-  background-image:url(https://cff2.earth.com/uploads/2019/02/07205805/Kids-benefit-from-grandmother-involvement-until-a-certain-point-730x410.jpg);
+  background-image:url(https://media.npr.org/assets/img/2019/02/06/grandmother-1_wide-b4e1ac71c276b447a873921dea8f9b6175d84a91.jpeg?s=1400);
   color:white;
   background-size:cover;
   height:600px;
@@ -32,22 +32,79 @@
 .ginput{
   margin:10px;
 }
-.form-inline {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+.search-row{
+  display:flex;
   justify-content:center;
-  margin-top: 30px;
 }
-@media (max-width: 700px) {
-  .form-inline input {
+  .search-input{
+    padding: 10px;
+    float: left;
+    height: 42px;
+    border: 1px solid #757575;
+    border-right-color: transparent;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 16px;
+
+  }
+  .checks-input{
+    float: left;
+    height: 42px;
+    border: 1px solid #757575;
+    border-right-color: transparent;
+  }
+  .check-in {
+    padding: 2px;
+    margin: 5px;
+    float: left;
+    height: 30px;
+    border-color: transparent;
+    font-size: 16px;
+  }
+  .check-in:focus{
+    outline: none;
+    background-color: #99EDE6;
+    border-radius: 4px;
+  }
+  .check-in:hover{
+    cursor: pointer;
+  }
+  .search-btn{
+    float: left;
+    height: 42px;
+    border: 1px solid #FF5A5F;
+    margin: 0 0 3px 0;
+    background-color: #FF5A5F;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .search-btn:hover{
+    background-color: #FF7E82;
+    cursor: pointer;
+  }
+  @media (max-width: 700px) {
+  .search-row input {
     margin: 10px 0;
   }
-  .hero{
-     height:900px;
-  }
-  .form-inline {
+  .search-row {
     flex-direction: column;
     align-items: stretch;
+    height: 200px;
+    display:flex;
+    justify-content:center;
+  }
+  .hero{
+    h1{
+      font-size:70px;
+    }
+
+  }
+  .search-row button{
+    margin: 10px 0;
+    float: center;
   }
 }
+
