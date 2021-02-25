@@ -1,4 +1,8 @@
+<div class="hero-picture">
+  <h1>Find granny or make an offer</h1>
+</div>
 <div class="container">
+  <div class="col-xs-6 col-sm-4 col-md-4">
     <% @grandmother_offers.each do |offer| %>
       <%= link_to grandmother_offer_path(offer), class: 'card-product-link' do %>
         <div class="card-product my-3" >
@@ -11,7 +15,6 @@
           </div>
         <% end %>
     <% end %>
+  </div>
+    <button class="gbutton" style="text-decoration: none; color: white;"><%= link_to 'create grandmother offer', new_grandmother_offer_path %></button>
 </div>
-
-<div class='gbutton'><%= link_to 'create grandmother offer', new_grandmother_offer_path %></div>
-
