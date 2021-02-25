@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_02_25_105324) do
-=======
-ActiveRecord::Schema.define(version: 2021_02_25_104437) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,13 +36,13 @@ ActiveRecord::Schema.define(version: 2021_02_25_104437) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.string "photo"
-    t.float "latitude"
-    t.float "longitude"
     t.string "city"
     t.string "specialty"
     t.string "character"
     t.string "return_offer_wish"
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_grandmother_offers_on_user_id"
   end
 
