@@ -12,8 +12,14 @@
     <label for="tab-2" class="tab-label-2">REQUESTED BOOKINGS</label>
 
     <!--<div class="clear-shadow"></div>-->
-
-        <% @my_bookings.each do |b| %>
+    <% if @my_bookings.empty? %>
+    <div class="content">
+      <div class="content-1 p-3 py-5">
+        <p>You do not have any bookings yet.</p>
+      </div>
+    </div>
+    <% end %>
+    <% @my_bookings.each do |b| %>
     <div class="content">
       <div class="content-1 p-3">
         <h2 class="tab-title">CURRENT BOOKING</h2>
@@ -33,14 +39,24 @@
         <% end %>
         <hr>
       </div>
-
+      <% end %>
       <div class="content-2 p-3">
         <h2 class="tab-title">REQUESTED BOOKING</h2>
+        <% if @requests.empty? %>
+          <div class="content">
+            <div class="content-1 p-3 py-5">
+              <p>You do not have any bookings yet.</p>
+            </div>
+          </div>
+        <% end %>
+        <% @requests.each do |b| %>
+        <h6 class="mt-4">You have a booking for:</h6>
+        <p><%= b.grandmother_offer.first_name %></p>
         <h6 class="mt-4">Date of booking request</h6>
         <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
         <h6 class="mt-4">Description</h6>
         <p><%= b.grandmother_offer.description %></p>
-        <h6>Status</h6>
+        <h6 class="mt-4">Status</h6>
         <% if b.accepted == true %>
         <p>Accepted</p>
         <% elsif b.accepted == false %>
@@ -49,17 +65,23 @@
         <p>Pending</p>
         <% end %>
         <% if current_user == b.grandmother_offer.user  %>
-        <p><%= link_to "Accept", accept_booking_path(b), method: :patch %></p>
-        <p><%= link_to "Decline", reject_booking_path(b), method: :patch %></p>
+        <p><%= link_to "Accept", accept_booking_path(b), method: :patch, class: "accepted-button" %></p>
+        <p><%= link_to "Decline", reject_booking_path(b), method: :patch, class: "declined-button" %></p>
         <% end %>
 
+    <% end %>
       </div>
     </div>
-    <% end %>
   </section>
 
+
   <div class="link-position">
+    <% if @my_bookings.empty? %>
+    <%= link_to "BOOK A GRANNY", grandmother_offers_path, class: "gbutton"  %>
+
+    <% else %>
     <%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path, class: "gbutton"  %>
+    <% end %>
   </div>
 </div>
 
