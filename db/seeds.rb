@@ -8,6 +8,7 @@
 
 require 'open-uri'
 
+Booking.destroy_all
 GrandmotherOffer.destroy_all
 User.destroy_all
 
