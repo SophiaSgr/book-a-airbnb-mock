@@ -12,64 +12,58 @@
     <label for="tab-2" class="tab-label-2">REQUESTED BOOKINGS</label>
 
     <!--<div class="clear-shadow"></div>-->
-    <% if @my_bookings.empty? %>
-    <div class="content">
-      <div class="content-1 p-3 py-5">
-        <p>You do not have any bookings yet.</p>
-      </div>
-    </div>
-    <% end %>
-    <% @my_bookings.each do |b| %>
-    <div class="content">
-      <div class="content-1 p-3">
-        <h2 class="tab-title">CURRENT BOOKING</h2>
-        <h6 class="mt-4">Spend some time with:</h6>
-        <p><%= b.grandmother_offer.first_name %></p>
-        <h6 class="mt-4">Date of your booking</h6>
-        <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
-        <h6 class="mt-4">Description</h6>
-        <p><%= b.grandmother_offer.description %></p>
-        <h6 class="mt-4">Status</h6>
-        <% if b.accepted == true %>
-        <p>Accepted</p>
-        <% elsif b.accepted == false %>
-        <p>Declined</p>
-        <% else %>
-        <p>Pending</p>
-        <% end %>
-        <hr>
-      </div>
+    <div class="content d-flex">
+        <div class="content-1 p-3 py-5">
+      <% if @my_bookings.empty? %>
+          <p>You do not have any bookings yet.</p>
       <% end %>
-      <div class="content-2 p-3">
-        <h2 class="tab-title">REQUESTED BOOKING</h2>
+      <% @my_bookings.each do |b| %>
+          <h2 class="tab-title">CURRENT BOOKING</h2>
+          <h6 class="mt-4">Spend some time with:</h6>
+          <p><%= b.grandmother_offer.first_name %></p>
+          <h6 class="mt-4">Date of your booking</h6>
+          <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
+          <h6 class="mt-4">Description</h6>
+          <p><%= b.grandmother_offer.description %></p>
+          <h6 class="mt-4">Status</h6>
+          <% if b.accepted == true %>
+          <p>Accepted</p>
+          <% elsif b.accepted == false %>
+          <p>Declined</p>
+          <% else %>
+          <p>Pending</p>
+          <% end %>
+          <hr>
+        <% end %>
+        </div>
+
+          <div class="content-2 p-3 py-5 align-items-center">
         <% if @requests.empty? %>
-          <div class="content">
-            <div class="content-1 p-3 py-5">
-              <p>You do not have any bookings yet.</p>
-            </div>
-          </div>
-        <% end %>
-        <% @requests.each do |b| %>
-        <h6 class="mt-4">You have a booking for:</h6>
-        <p><%= b.grandmother_offer.first_name %></p>
-        <h6 class="mt-4">Date of booking request</h6>
-        <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
-        <h6 class="mt-4">Description</h6>
-        <p><%= b.grandmother_offer.description %></p>
-        <h6 class="mt-4">Status</h6>
-        <% if b.accepted == true %>
-        <p>Accepted</p>
-        <% elsif b.accepted == false %>
-        <p>Declined</p>
-        <% else %>
-        <p>Pending</p>
-        <% end %>
-        <% if current_user == b.grandmother_offer.user  %>
-        <p><%= link_to "Accept", accept_booking_path(b), method: :patch, class: "accepted-button" %></p>
-        <p><%= link_to "Decline", reject_booking_path(b), method: :patch, class: "declined-button" %></p>
+            <p>No Requests.</p>
         <% end %>
 
-    <% end %>
+        <% @requests.each do |b| %>
+            <h6 class="mt-4">You have a booking for:</h6>
+            <p><%= b.grandmother_offer.first_name %></p>
+            <h6 class="mt-4">Date of booking request</h6>
+            <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
+            <h6 class="mt-4">Description</h6>
+            <p><%= b.grandmother_offer.description %></p>
+            <h6 class="mt-4">Status</h6>
+            <% if b.accepted == true %>
+              <p>Accepted</p>
+            <% elsif b.accepted == false %>
+              <p>Declined</p>
+            <% else %>
+              <p>Pending</p>
+            <% end %>
+            <% if current_user == b.grandmother_offer.user  %>
+            <p><%= link_to "Accept", accept_booking_path(b), method: :patch, class: "accepted-button" %></p>
+            <p><%= link_to "Decline", reject_booking_path(b), method: :patch, class: "declined-button" %></p>
+            <% end %>
+
+        <% end %>
+          </div>
       </div>
     </div>
   </section>
