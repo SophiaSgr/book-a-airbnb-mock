@@ -11,7 +11,9 @@ class GrandmotherOffersController < ApplicationController
     @markers = @grandmother_offers.geocoded.map do |granny|
       {
         lat: granny.latitude,
-        lng: granny.longitude
+        lng: granny.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { granny: granny }),
+        image_url: helpers.asset_url("https://t3.ftcdn.net/jpg/02/74/86/30/360_F_274863032_xgwvNFF0u9vZAGPmtvCRHdGxIeeDLAb9.jpg")
       }
     end
   end
