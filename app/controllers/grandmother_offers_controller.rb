@@ -1,7 +1,11 @@
 class GrandmotherOffersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-    @grandmother_offers = GrandmotherOffer.all
+    if params[:location].present?
+      @grandmother_offers = GrandmotherOffer.near(params[:location], 100)
+    else
+      @grandmother_offers = GrandmotherOffer.all
+    end
     @markers = @grandmother_offers.geocoded.map do |granny|
       {
         lat: granny.latitude,

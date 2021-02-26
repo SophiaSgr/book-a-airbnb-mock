@@ -5,12 +5,18 @@
       <p class="tagline">Book a granny,<br> in exchange for a deed of your own!</p>
       <h2>We have <%= GrandmotherOffer.count %> grannys available.</h2>
       <section class="search-row" style="margin-top: 30px; ">
-        <input class="search-input" type="text" placeholder="Select your location"></input>
-        <div class="checks-input" style="background-color: white;">
-          <input class="check-in" type="date" placeholder="Date:"></input>
+        <%= form_tag grandmother_offers_path, method: :get do %>
+        <div>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Set location" %>
+            <%= submit_tag "Search", class: "gbutton" %>
+          <% end %>
         </div>
-        <div class="button1"><button class="gbutton" href="/grandmother_offers"> See available offers </button></div>
       </section>
     </div>
   </div>
 </section>
+
+
