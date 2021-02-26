@@ -77,22 +77,22 @@ file = URI.open('https://images.unsplash.com/photo-1536122522160-72ca6bd783ba?ix
 granny6.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 granny6.save
 
-granny7 = GrandmotherOffer.new(user_id: lena.id, first_name: 'Leslie', last_name: 'Bauwers', username: 'Granny-Lena', return_offer_wish: 'cake', activity_type: 'reading stories', description: 'Hello, my name is Leslie, I am 78 years old. I like to tell people some old storys, so they wont be forgotten in the future. If you like to listen and have some cake, feel free to join me.', city: 'Rohlstorf', specialty: 'arts and peotry', character: 'wild and free!!', address: 'Rohlstorf, Germany')
+granny7 = GrandmotherOffer.new(user_id: lena.id, first_name: 'Lila', last_name: 'Sanches', username: 'Granny-Lena', return_offer_wish: 'cake', activity_type: 'fortune telling', description: 'Hello, my name is Lila. I love to share meal with others and get to know new people. My biggest hobby is fortune telling, would love to tell you something about your future!', city: 'Rohlstorf', specialty: 'arts and peotry', character: 'wild and free!!', address: 'Rohlstorf, Germany')
 
-file = URI.open('https://images.unsplash.com/photo-1556889882-73ea40694a98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1976&q=80')
+file = URI.open('https://images.unsplash.com/photo-1595529056838-5dd92007644d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fGdyYW5ueSUyMHJ1c3NpYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60')
 granny7.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 granny7.save
 
 granny8 = GrandmotherOffer.new(user_id: lora.id, first_name: 'Leslie', last_name: 'Bauwers', username: 'Lora', return_offer_wish: 'cake', activity_type: 'reading stories', description: 'Hello, my name is Leslie, I am 78 years old. I like to tell people some old storys, so they wont be forgotten in the future. If you like to listen and have some cake, feel free to join me.', city: 'Paderborn', specialty: 'being one with nature', character: 'cheerfull and extraordinary', address: 'Paderborn, Germany')
 
-file = URI.open('https://images.unsplash.com/photo-1581579439002-e29ac578f8d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1834&q=80')
+file = URI.open('https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzd8fGdyYW5ueSUyMHJ1c3NpYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 granny8.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 granny8.save
 
 
 granny9 = GrandmotherOffer.new(user_id: lotti.id, first_name: 'Leslie', last_name: 'Bauwers', username: 'TheOnlyLotti', return_offer_wish: 'cake', activity_type: 'reading stories', description: 'Hello, my name is Leslie, I am 78 years old. I like to tell people some old storys, so they wont be forgotten in the future. If you like to listen and have some cake, feel free to join me.', city: 'Gedern', specialty: 'being a family grandma', character: 'good at listening and cheering up!', address: 'Gedern, Germany')
 
-file = URI.open('https://images.unsplash.com/photo-1519975258993-60b42d1c2ee2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
+file = URI.open('https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80')
 granny9.photos.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 granny9.save
 
