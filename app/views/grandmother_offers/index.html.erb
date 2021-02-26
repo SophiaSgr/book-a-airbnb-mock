@@ -1,23 +1,34 @@
-<div class="hero-picture">
+<!-- <div class="hero-picture">
   <h1>Find granny or make an offer</h1>
-</div>
-<div class="container">
-  <div class="col-xs-6 col-sm-4 col-md-4">
-    <% @grandmother_offers.each do |offer| %>
-      <%= link_to grandmother_offer_path(offer), class: 'card-product-link' do %>
-        <div class="card-product my-3" >
-          <% if offer.photos.attached? %>
-            <%= cl_image_tag offer.photos.first.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-          <div class="card-product-infos">
-          <h2><%= offer.username %></h2>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+</div> -->
 
+<!--     <div class="button" style="margin-bottom:20px;"><%= link_to 'create grandmother offer', new_grandmother_offer_path, class: "gbutton"%>
+    </div> -->
+
+<div class="container d-flex justify-content-between py-3">
+
+  <div class="container">
+      <div class="gcards">
+        <% @grandmother_offers.each do |offer| %>
+
+          <%= link_to grandmother_offer_path(offer), class: 'card-product-link' do %>
+            <div class="card-img-top my-3 " >
+              <% if offer.photos.attached? %>
+
+                <%= cl_image_tag offer.photos.first.key, height: 200, width: 300, crop: :fill %>
+              <% end %>
+              <div class="card-body">
+                 <h5 class="card-title"> <%= offer.activity_type.capitalize() %> with granny <%= offer.first_name %> </h5>
+                 <p class="card-text"> <%= offer.city %> | <%= offer.return_offer_wish %>  </p>
+
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+      </div>
   </div>
-    <div class="button" style="margin-bottom:20px;"><%= link_to 'create grandmother offer', new_grandmother_offer_path, class: "gbutton"%></div>
+
   <div id="map"
     style="width: 100%; height: 600px;"
     data-markers="<%= @markers.to_json %>"
