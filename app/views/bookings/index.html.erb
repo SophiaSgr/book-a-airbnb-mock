@@ -2,9 +2,6 @@
 
 
 <div class="container">
-  <div class="link-position">
-    <%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path, class: "gbutton"  %>
-  </div>
 
   <section class="tabs">
 
@@ -19,7 +16,7 @@
         <% @my_bookings.each do |b| %>
     <div class="content">
       <div class="content-1 p-3">
-        <h2>CURRENT BOOKING</h2>
+        <h2 class="tab-title">CURRENT BOOKING</h2>
         <h6 class="mt-4">Spend some time with:</h6>
         <p><%= b.grandmother_offer.first_name %></p>
         <h6 class="mt-4">Date of your booking</h6>
@@ -34,10 +31,11 @@
         <% else %>
         <p>Pending</p>
         <% end %>
+        <hr>
       </div>
 
       <div class="content-2 p-3">
-        <h2>REQUESTED BOOKING</h2>
+        <h2 class="tab-title">REQUESTED BOOKING</h2>
         <h6 class="mt-4">Date of booking request</h6>
         <p><%= b.booking_date.strftime("%m/%d/%Y") %></p>
         <h6 class="mt-4">Description</h6>
@@ -60,6 +58,9 @@
     <% end %>
   </section>
 
+  <div class="link-position">
+    <%= link_to "DONT BE SHY, BOOK ANOTHER GRANNY", grandmother_offers_path, class: "gbutton"  %>
+  </div>
 </div>
 
 
