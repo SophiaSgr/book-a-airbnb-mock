@@ -1,7 +1,7 @@
 
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-<div class="d-flex ">
+<div class="d-flex">
   <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "https://t3.ftcdn.net/jpg/02/74/86/30/360_F_274863032_xgwvNFF0u9vZAGPmtvCRHdGxIeeDLAb9.jpg" %>
     <% end %>
@@ -16,7 +16,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Upload your Granny", root_path, class: "gbutton" %>
+          <%= link_to "Upload your Granny", root_path, class: "upload-offer nav-link", style: "color:white" %>
         </li>
         <li class="nav-item active">
           <%= link_to "Bookings", bookings_path, class: "nav-link" %>
