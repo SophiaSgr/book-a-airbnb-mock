@@ -2,25 +2,3 @@
 @import "home";
 
 
-
-.gcards {
-  background-color: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  border-radius: 25px;
-  padding: 20px;
-  height: 400px;
-  margin-bottom: 20px;
-}
-
-#map {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-
-.card-img-top {
-  img {
-    width: 100%;
-    border-radius: 25px;
-    }
-}
