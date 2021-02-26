@@ -16,7 +16,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Upload your Granny", root_path, class: "upload-offer nav-link", style: "color:white" %>
+          <%= link_to "Upload your Granny", new_grandmother_offer_path, class: "upload-offer nav-link", style: "color:white" %>
         </li>
         <li class="nav-item active">
           <%= link_to "Bookings", bookings_path, class: "nav-link" %>
