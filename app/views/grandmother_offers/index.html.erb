@@ -6,18 +6,20 @@
 <!--     <div class="button" style="margin-bottom:20px;"><%= link_to 'create grandmother offer', new_grandmother_offer_path, class: "gbutton"%>
     </div> -->
 
-<div class="container d-flex justify-content-between py-3">
+<div class="container-fluid d-flex justify-content-between py-3">
 
   <div class="container">
-      <div class="gcards">
+    <div class="row">
         <% @grandmother_offers.each do |offer| %>
-
+        <div class="col-6">
           <%= link_to grandmother_offer_path(offer), class: 'card-product-link' do %>
+          <div class="gcards w-100">
             <div class="card-img-top my-3 " >
               <% if offer.photos.attached? %>
 
-                <%= cl_image_tag offer.photos.first.key, height: 200, width: 300, crop: :fill %>
+                <%= cl_image_tag offer.photos.first.key, height: 200 %>
               <% end %>
+            </div>
               <div class="card-body">
                  <h5 class="card-title"> <%= offer.activity_type.capitalize() %> with granny <%= offer.first_name %> </h5>
                  <p class="card-text"> <%= offer.city %> | <%= offer.return_offer_wish %>  </p>
@@ -25,10 +27,15 @@
               </div>
             </div>
           <% end %>
+
+        </div>
+
+
         <% end %>
 
 
-      </div>
+    </div>
+
   </div>
 
   <div id="map"
