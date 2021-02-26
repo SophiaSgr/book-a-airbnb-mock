@@ -1,31 +1,36 @@
 <div class="container">
   <div class="row justify-content-center py-3">
-    <div>
 
-      <div class='d-flex shadow p-3 mb-5 bg-white rounded mr-3 py-3' >
+      <div class='container d-flex shadow justify-content-between py-3 ml-5' >
 
         <% if @grandmother_offer.photos.attached? %>
-           <% @grandmother_offer.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+         <div id="img-main">
+            <% @grandmother_offer.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+        </div>
           <% end %>
-        <% end %>
-        <div class='py-3 ml-5'>
-          <h1> <%= @grandmother_offer.activity_type %> with <%= @grandmother_offer.first_name %> <%= @grandmother_offer.last_name %></h1>
+        <div class='py-3 ml-5 mb-5'>
+          <h4> <%= @grandmother_offer.activity_type.capitalize %> with <%= @grandmother_offer.first_name %> <%= @grandmother_offer.last_name.capitalize %></h4>
+          <div class='card-text'>
+            <p> <strong> My specialty: </strong> <%= @grandmother_offer.specialty %> </p>
+            <p> <strong> My character: </strong> <%= @grandmother_offer.character %> </p>
+            <p> <strong> In return, I'd be happy to have: </strong> <%= @grandmother_offer.return_offer_wish %> </p>
+            <p> <strong> Description: </strong> <%= @grandmother_offer.description %> </p>
 
-
-          <p> <%= @grandmother_offer.description %> </p>
+          </div>
 
         </div>
 
 
       </div>
 
+      <div class="container py-3 ml-5 mr-5">
+        <%= render "bookings/new_booking_form" %>
+      </div>
 
-        <%= link_to 'SEE ALL GRANNYS', grandmother_offers_path, class: 'gbutton' %>
-    </div>
-    <%= render "bookings/new_booking_form" %>
   </div>
 </div>
 
-
+      <%= link_to 'SEE ALL GRANNYS', grandmother_offers_path, class: 'gbutton' %>
 

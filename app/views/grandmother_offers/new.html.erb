@@ -3,14 +3,14 @@
 </div>
 <div class="container" style="margin-top: 20px">
 <%= simple_form_for(@grandmother_offer) do |f| %>
-  <%= f.input :username %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :activity_type %>
-  <%= f.input :description %>
+  <%= f.input :username, class: "email", placeholder: "username"%>
+  <%= f.input :first_name, class: "email", placeholder: "first name" %>
+  <%= f.input :last_name, class: "email", placeholder: "last name" %>
+  <%= f.input :activity_type, class: "email", placeholder: "activity_type" %>
+  <%= f.input :description, class: "email", placeholder: "description" %>
 
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit 'Submit', class:'btn btn-primary'%>
+  <%= f.submit 'Submit', class: "btn btn-primary", style: "width:100%;"%>
 
 <% end %>
 </div>
